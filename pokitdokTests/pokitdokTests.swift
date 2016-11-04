@@ -1,6 +1,6 @@
 //
 //  pokitdokTests.swift
-//  pokitdok
+//  pokitdokTests
 //
 // Copyright (C) 2016, All Rights Reserved, PokitDok, Inc.
 // https://www.pokitdok.com

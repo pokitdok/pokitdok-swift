@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D1857C61DCD0C43005D573B"
+               BlueprintIdentifier = "1D18583C1DCD1444005D573B"
                BuildableName = "pokitdok.framework"
                BlueprintName = "pokitdok"
                ReferencedContainer = "container:pokitdok.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D1857CF1DCD0C43005D573B"
+               BlueprintIdentifier = "1D1858451DCD1445005D573B"
                BuildableName = "pokitdokTests.xctest"
                BlueprintName = "pokitdokTests"
                ReferencedContainer = "container:pokitdok.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D1857C61DCD0C43005D573B"
+            BlueprintIdentifier = "1D18583C1DCD1444005D573B"
             BuildableName = "pokitdok.framework"
             BlueprintName = "pokitdok"
             ReferencedContainer = "container:pokitdok.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D1857C61DCD0C43005D573B"
+            BlueprintIdentifier = "1D18583C1DCD1444005D573B"
             BuildableName = "pokitdok.framework"
             BlueprintName = "pokitdok"
             ReferencedContainer = "container:pokitdok.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D1857C61DCD0C43005D573B"
+            BlueprintIdentifier = "1D18583C1DCD1444005D573B"
             BuildableName = "pokitdok.framework"
             BlueprintName = "pokitdok"
             ReferencedContainer = "container:pokitdok.xcodeproj">

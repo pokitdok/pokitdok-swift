@@ -7,87 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D1857D11DCD0C43005D573B /* pokitdok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1857C71DCD0C43005D573B /* pokitdok.framework */; };
-		1D1857D61DCD0C43005D573B /* pokitdokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1857D51DCD0C43005D573B /* pokitdokTests.swift */; };
-		1D1857D81DCD0C43005D573B /* pokitdok.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1857CA1DCD0C43005D573B /* pokitdok.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D1857E41DCD0C8A005D573B /* Pokitdok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1857E31DCD0C8A005D573B /* Pokitdok.swift */; };
-		1D1857E61DCD0CAE005D573B /* PokitdokRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1857E51DCD0CAE005D573B /* PokitdokRequest.swift */; };
+		1D1858471DCD1445005D573B /* pokitdok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D18583D1DCD1444005D573B /* pokitdok.framework */; };
+		1D18584C1DCD1445005D573B /* pokitdokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18584B1DCD1445005D573B /* pokitdokTests.swift */; };
+		1D18584E1DCD1445005D573B /* pokitdok.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1858401DCD1444005D573B /* pokitdok.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D1858581DCD1488005D573B /* Pokitdok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1858571DCD1488005D573B /* Pokitdok.swift */; };
+		1D18585A1DCD14A2005D573B /* PokitdokRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1858591DCD14A2005D573B /* PokitdokRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1D1857D21DCD0C43005D573B /* PBXContainerItemProxy */ = {
+		1D1858481DCD1445005D573B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1D1857BE1DCD0C43005D573B /* Project object */;
+			containerPortal = 1D1858341DCD1444005D573B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1D1857C61DCD0C43005D573B;
+			remoteGlobalIDString = 1D18583C1DCD1444005D573B;
 			remoteInfo = pokitdok;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D1857C71DCD0C43005D573B /* pokitdok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pokitdok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D1857CA1DCD0C43005D573B /* pokitdok.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pokitdok.h; sourceTree = "<group>"; };
-		1D1857CB1DCD0C43005D573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D1857D01DCD0C43005D573B /* pokitdokTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokitdokTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D1857D51DCD0C43005D573B /* pokitdokTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokitdokTests.swift; sourceTree = "<group>"; };
-		1D1857D71DCD0C43005D573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D1857E31DCD0C8A005D573B /* Pokitdok.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pokitdok.swift; path = ../Pokitdok.swift; sourceTree = "<group>"; };
-		1D1857E51DCD0CAE005D573B /* PokitdokRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokitdokRequest.swift; sourceTree = "<group>"; };
+		1D18583D1DCD1444005D573B /* pokitdok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pokitdok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1858401DCD1444005D573B /* pokitdok.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pokitdok.h; sourceTree = "<group>"; };
+		1D1858411DCD1444005D573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D1858461DCD1445005D573B /* pokitdokTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokitdokTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D18584B1DCD1445005D573B /* pokitdokTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokitdokTests.swift; sourceTree = "<group>"; };
+		1D18584D1DCD1445005D573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D1858571DCD1488005D573B /* Pokitdok.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokitdok.swift; sourceTree = "<group>"; };
+		1D1858591DCD14A2005D573B /* PokitdokRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokitdokRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D1857C31DCD0C43005D573B /* Frameworks */ = {
+		1D1858391DCD1444005D573B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D1857CD1DCD0C43005D573B /* Frameworks */ = {
+		1D1858431DCD1445005D573B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1857D11DCD0C43005D573B /* pokitdok.framework in Frameworks */,
+				1D1858471DCD1445005D573B /* pokitdok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D1857BD1DCD0C43005D573B = {
+		1D1858331DCD1444005D573B = {
 			isa = PBXGroup;
 			children = (
-				1D1857C91DCD0C43005D573B /* pokitdok */,
-				1D1857D41DCD0C43005D573B /* pokitdokTests */,
-				1D1857C81DCD0C43005D573B /* Products */,
+				1D18583F1DCD1444005D573B /* pokitdok */,
+				1D18584A1DCD1445005D573B /* pokitdokTests */,
+				1D18583E1DCD1444005D573B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1D1857C81DCD0C43005D573B /* Products */ = {
+		1D18583E1DCD1444005D573B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D1857C71DCD0C43005D573B /* pokitdok.framework */,
-				1D1857D01DCD0C43005D573B /* pokitdokTests.xctest */,
+				1D18583D1DCD1444005D573B /* pokitdok.framework */,
+				1D1858461DCD1445005D573B /* pokitdokTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D1857C91DCD0C43005D573B /* pokitdok */ = {
+		1D18583F1DCD1444005D573B /* pokitdok */ = {
 			isa = PBXGroup;
 			children = (
-				1D1857E31DCD0C8A005D573B /* Pokitdok.swift */,
-				1D1857CA1DCD0C43005D573B /* pokitdok.h */,
-				1D1857CB1DCD0C43005D573B /* Info.plist */,
-				1D1857E51DCD0CAE005D573B /* PokitdokRequest.swift */,
+				1D1858401DCD1444005D573B /* pokitdok.h */,
+				1D1858411DCD1444005D573B /* Info.plist */,
+				1D1858571DCD1488005D573B /* Pokitdok.swift */,
+				1D1858591DCD14A2005D573B /* PokitdokRequest.swift */,
 			);
 			path = pokitdok;
 			sourceTree = "<group>";
 		};
-		1D1857D41DCD0C43005D573B /* pokitdokTests */ = {
+		1D18584A1DCD1445005D573B /* pokitdokTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D1857D51DCD0C43005D573B /* pokitdokTests.swift */,
-				1D1857D71DCD0C43005D573B /* Info.plist */,
+				1D18584B1DCD1445005D573B /* pokitdokTests.swift */,
+				1D18584D1DCD1445005D573B /* Info.plist */,
 			);
 			path = pokitdokTests;
 			sourceTree = "<group>";
@@ -95,25 +95,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1D1857C41DCD0C43005D573B /* Headers */ = {
+		1D18583A1DCD1444005D573B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1857D81DCD0C43005D573B /* pokitdok.h in Headers */,
+				1D18584E1DCD1445005D573B /* pokitdok.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1D1857C61DCD0C43005D573B /* pokitdok */ = {
+		1D18583C1DCD1444005D573B /* pokitdok */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D1857DB1DCD0C43005D573B /* Build configuration list for PBXNativeTarget "pokitdok" */;
+			buildConfigurationList = 1D1858511DCD1445005D573B /* Build configuration list for PBXNativeTarget "pokitdok" */;
 			buildPhases = (
-				1D1857C21DCD0C43005D573B /* Sources */,
-				1D1857C31DCD0C43005D573B /* Frameworks */,
-				1D1857C41DCD0C43005D573B /* Headers */,
-				1D1857C51DCD0C43005D573B /* Resources */,
+				1D1858381DCD1444005D573B /* Sources */,
+				1D1858391DCD1444005D573B /* Frameworks */,
+				1D18583A1DCD1444005D573B /* Headers */,
+				1D18583B1DCD1444005D573B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -121,75 +121,75 @@
 			);
 			name = pokitdok;
 			productName = pokitdok;
-			productReference = 1D1857C71DCD0C43005D573B /* pokitdok.framework */;
+			productReference = 1D18583D1DCD1444005D573B /* pokitdok.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		1D1857CF1DCD0C43005D573B /* pokitdokTests */ = {
+		1D1858451DCD1445005D573B /* pokitdokTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D1857DE1DCD0C43005D573B /* Build configuration list for PBXNativeTarget "pokitdokTests" */;
+			buildConfigurationList = 1D1858541DCD1445005D573B /* Build configuration list for PBXNativeTarget "pokitdokTests" */;
 			buildPhases = (
-				1D1857CC1DCD0C43005D573B /* Sources */,
-				1D1857CD1DCD0C43005D573B /* Frameworks */,
-				1D1857CE1DCD0C43005D573B /* Resources */,
+				1D1858421DCD1445005D573B /* Sources */,
+				1D1858431DCD1445005D573B /* Frameworks */,
+				1D1858441DCD1445005D573B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1D1857D31DCD0C43005D573B /* PBXTargetDependency */,
+				1D1858491DCD1445005D573B /* PBXTargetDependency */,
 			);
 			name = pokitdokTests;
 			productName = pokitdokTests;
-			productReference = 1D1857D01DCD0C43005D573B /* pokitdokTests.xctest */;
+			productReference = 1D1858461DCD1445005D573B /* pokitdokTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1D1857BE1DCD0C43005D573B /* Project object */ = {
+		1D1858341DCD1444005D573B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Charlie Thiry";
 				TargetAttributes = {
-					1D1857C61DCD0C43005D573B = {
+					1D18583C1DCD1444005D573B = {
 						CreatedOnToolsVersion = 8.1;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
-					1D1857CF1DCD0C43005D573B = {
+					1D1858451DCD1445005D573B = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 1D1857C11DCD0C43005D573B /* Build configuration list for PBXProject "pokitdok" */;
+			buildConfigurationList = 1D1858371DCD1444005D573B /* Build configuration list for PBXProject "pokitdok" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1D1857BD1DCD0C43005D573B;
-			productRefGroup = 1D1857C81DCD0C43005D573B /* Products */;
+			mainGroup = 1D1858331DCD1444005D573B;
+			productRefGroup = 1D18583E1DCD1444005D573B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D1857C61DCD0C43005D573B /* pokitdok */,
-				1D1857CF1DCD0C43005D573B /* pokitdokTests */,
+				1D18583C1DCD1444005D573B /* pokitdok */,
+				1D1858451DCD1445005D573B /* pokitdokTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D1857C51DCD0C43005D573B /* Resources */ = {
+		1D18583B1DCD1444005D573B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D1857CE1DCD0C43005D573B /* Resources */ = {
+		1D1858441DCD1445005D573B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,35 +199,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D1857C21DCD0C43005D573B /* Sources */ = {
+		1D1858381DCD1444005D573B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1857E61DCD0CAE005D573B /* PokitdokRequest.swift in Sources */,
-				1D1857E41DCD0C8A005D573B /* Pokitdok.swift in Sources */,
+				1D18585A1DCD14A2005D573B /* PokitdokRequest.swift in Sources */,
+				1D1858581DCD1488005D573B /* Pokitdok.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D1857CC1DCD0C43005D573B /* Sources */ = {
+		1D1858421DCD1445005D573B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1857D61DCD0C43005D573B /* pokitdokTests.swift in Sources */,
+				1D18584C1DCD1445005D573B /* pokitdokTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1D1857D31DCD0C43005D573B /* PBXTargetDependency */ = {
+		1D1858491DCD1445005D573B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D1857C61DCD0C43005D573B /* pokitdok */;
-			targetProxy = 1D1857D21DCD0C43005D573B /* PBXContainerItemProxy */;
+			target = 1D18583C1DCD1444005D573B /* pokitdok */;
+			targetProxy = 1D1858481DCD1445005D573B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1D1857D91DCD0C43005D573B /* Debug */ = {
+		1D18584F1DCD1445005D573B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,7 +280,7 @@
 			};
 			name = Debug;
 		};
-		1D1857DA1DCD0C43005D573B /* Release */ = {
+		1D1858501DCD1445005D573B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -326,7 +326,7 @@
 			};
 			name = Release;
 		};
-		1D1857DC1DCD0C43005D573B /* Debug */ = {
+		1D1858521DCD1445005D573B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -346,7 +346,7 @@
 			};
 			name = Debug;
 		};
-		1D1857DD1DCD0C43005D573B /* Release */ = {
+		1D1858531DCD1445005D573B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -365,7 +365,7 @@
 			};
 			name = Release;
 		};
-		1D1857DF1DCD0C43005D573B /* Debug */ = {
+		1D1858551DCD1445005D573B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -377,7 +377,7 @@
 			};
 			name = Debug;
 		};
-		1D1857E01DCD0C43005D573B /* Release */ = {
+		1D1858561DCD1445005D573B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -392,32 +392,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D1857C11DCD0C43005D573B /* Build configuration list for PBXProject "pokitdok" */ = {
+		1D1858371DCD1444005D573B /* Build configuration list for PBXProject "pokitdok" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D1857D91DCD0C43005D573B /* Debug */,
-				1D1857DA1DCD0C43005D573B /* Release */,
+				1D18584F1DCD1445005D573B /* Debug */,
+				1D1858501DCD1445005D573B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D1857DB1DCD0C43005D573B /* Build configuration list for PBXNativeTarget "pokitdok" */ = {
+		1D1858511DCD1445005D573B /* Build configuration list for PBXNativeTarget "pokitdok" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D1857DC1DCD0C43005D573B /* Debug */,
-				1D1857DD1DCD0C43005D573B /* Release */,
+				1D1858521DCD1445005D573B /* Debug */,
+				1D1858531DCD1445005D573B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		1D1857DE1DCD0C43005D573B /* Build configuration list for PBXNativeTarget "pokitdokTests" */ = {
+		1D1858541DCD1445005D573B /* Build configuration list for PBXNativeTarget "pokitdokTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D1857DF1DCD0C43005D573B /* Debug */,
-				1D1857E01DCD0C43005D573B /* Release */,
+				1D1858551DCD1445005D573B /* Debug */,
+				1D1858561DCD1445005D573B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1D1857BE1DCD0C43005D573B /* Project object */;
+	rootObject = 1D1858341DCD1444005D573B /* Project object */;
 }
