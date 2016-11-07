@@ -41,7 +41,7 @@ public class PokitdokRequest: NSObject {
     var requestObject: URLRequest
     var responseObject: PokitdokResponse
     
-    init(path: String, method: String = "GET", headers: Dictionary<String, String>? = nil, params: Dictionary<String, Any>? = nil, files: Array<FileData>? = nil) throws {
+    public init(path: String, method: String = "GET", headers: Dictionary<String, String>? = nil, params: Dictionary<String, Any>? = nil, files: Array<FileData>? = nil) throws {
         /*
          Initialize requestObject variables
          :PARAM path: String type url path for request
@@ -59,7 +59,7 @@ public class PokitdokRequest: NSObject {
         try buildRequestBody(params: params, files: files)
     }
     
-    func call() throws -> PokitdokResponse {
+    public func call() throws -> PokitdokResponse {
         /*
          Send the request off and return result
          :RETURNS responseObject: PokitdokResponse type holding all the response information
@@ -169,7 +169,7 @@ public class PokitdokRequest: NSObject {
         return pcs.joined(separator: "&")
     }
     
-    func getHeader(key: String) -> String? {
+    public func getHeader(key: String) -> String? {
         /*
          Enables user to manipulate headers from outside the class
          return the header at the key from the requestObject
@@ -179,7 +179,7 @@ public class PokitdokRequest: NSObject {
         return requestObject.value(forHTTPHeaderField: key)
     }
     
-    func setHeader(key: String, value: String){
+    public func setHeader(key: String, value: String){
         /*
          Enables user to manipulate headers from outside the class
          set the header to the key: value pair
@@ -189,7 +189,7 @@ public class PokitdokRequest: NSObject {
         requestObject.setValue(value, forHTTPHeaderField: key)
     }
     
-    func getMethod() -> String? {
+    public func getMethod() -> String? {
         /*
          getter for httpMethod of requestObject
          :RETURNS httpMethod: String? type http method
@@ -197,7 +197,7 @@ public class PokitdokRequest: NSObject {
         return requestObject.httpMethod
     }
     
-    func setMethod(method: String){
+    public func setMethod(method: String){
         /*
          setter for httpMethod of requestObject
          :PARAM method: String type http method, ex("GET", "POST", etc.)
@@ -205,7 +205,7 @@ public class PokitdokRequest: NSObject {
         requestObject.httpMethod = method
     }
     
-    func getPath() -> String {
+    public func getPath() -> String {
         /*
          getter for url of requestObject
          :RETURNS url: String type url path of requestObject
@@ -213,7 +213,7 @@ public class PokitdokRequest: NSObject {
         return (requestObject.url?.absoluteString)!
     }
     
-    func setPath(path: String){
+    public func setPath(path: String){
         /*
          setter for url of requestObject
          :PARAM path: String type to be wrapped by URL and passed to requestObject
@@ -221,7 +221,7 @@ public class PokitdokRequest: NSObject {
         requestObject.url = NSURL(string: path)! as URL
     }
     
-    func getBody() -> Data?{
+    public func getBody() -> Data?{
         /*
          getter for httpBody of the requestObject
          :RETURNS httpBody: Data? type returned from httpBody
@@ -229,7 +229,7 @@ public class PokitdokRequest: NSObject {
         return requestObject.httpBody
     }
     
-    func setBody(data: Data?){
+    public func setBody(data: Data?){
         /*
          setter for httpBody of the requestObject
          :PARAM data: Data? type to be sent into httpBody
@@ -247,7 +247,7 @@ public struct FileData {
     var path: String
     var contentType: String
     
-    func httpEncode() throws -> Data{
+    public func httpEncode() throws -> Data{
         /*
          Encodes file into data for http transmission
          :RETURNS body: Data type filled with content headers and file data
@@ -266,7 +266,7 @@ public struct FileData {
     }
 }
 
-enum DataConversionError: Error {
+public enum DataConversionError: Error {
     /*
         Custom request error handling
     */

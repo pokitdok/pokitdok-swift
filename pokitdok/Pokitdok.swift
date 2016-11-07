@@ -11,11 +11,11 @@
 
 import Foundation
 
-enum ClientErrors : Error {
+public enum FailedToFetchTokenError : Error {
     /*
         Custom error handling to track client requests
     */
-    case FailedToFetchToken(String)
+    case CouldNotAuthenticate(String)
 }
 
 public class Pokitdok: NSObject {
@@ -85,7 +85,7 @@ public class Pokitdok: NSObject {
         if tokenResponse.success == true {
             self.accessToken = tokenResponse.json?["access_token"] as! String?
         } else {
-            throw ClientErrors.FailedToFetchToken("Failed to fetch access token")
+            throw FailedToFetchTokenError.CouldNotAuthenticate("Failed to fetch access token")
         }
     }
     
