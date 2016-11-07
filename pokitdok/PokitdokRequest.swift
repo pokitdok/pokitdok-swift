@@ -41,7 +41,7 @@ public class PokitdokRequest: NSObject {
     var requestObject: URLRequest
     var responseObject: PokitdokResponse
     
-    init(path: String, method: String = "GET", headers: Dictionary<String, String>? = nil, params: Dictionary<String, Any>? = nil, files: Array<FileData>? = nil){
+    init(path: String, method: String = "GET", headers: Dictionary<String, String>? = nil, params: Dictionary<String, Any>? = nil, files: Array<FileData>? = nil) throws {
         /*
          Initialize requestObject variables
          :PARAM path: String type url path for request
@@ -56,10 +56,10 @@ public class PokitdokRequest: NSObject {
         
         requestObject.httpMethod = method
         buildRequestHeaders(headers: headers)
-        buildRequestBody(params: params, files: files)
+        try buildRequestBody(params: params, files: files)
     }
     
-    func call() -> PokitdokResponse {
+    func call() throws -> PokitdokResponse {
         /*
          Send the request off and return result
          :RETURNS responseObject: PokitdokResponse type holding all the response information
@@ -70,14 +70,6 @@ public class PokitdokRequest: NSObject {
             self.responseObject.data = data
             self.responseObject.error = error
             
-            if let data = data {
-                do {
-                    self.responseObject.json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, Any>
-                } catch {
-                    // raise here
-                    print("Failed to parse json from data")
-                }
-            }
             if let response = response as? HTTPURLResponse {
                 if 200...299 ~= response.statusCode {
                     self.responseObject.success = true
@@ -88,6 +80,14 @@ public class PokitdokRequest: NSObject {
             sema.signal() // signal request is complete
         }).resume()
         sema.wait() // wait for request to complete
+        
+        if let data = responseObject.data {
+            do {
+                responseObject.json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as! Dictionary<String, Any>
+            } catch {
+                throw DataConversionError.FromJSON("Failed to parse JSON from data")
+            }
+        }
         
         return responseObject
     }
@@ -102,7 +102,7 @@ public class PokitdokRequest: NSObject {
         }
     }
     
-    private func buildRequestBody(params: Dictionary<String, Any>? = nil, files: Array<FileData>? = nil){
+    private func buildRequestBody(params: Dictionary<String, Any>? = nil, files: Array<FileData>? = nil) throws -> Void {
         /*
          Create the data body of the request and set it on the requestObject
          :PARAM params: [String:Any] type key:value parameters to be sent with request
@@ -120,7 +120,7 @@ public class PokitdokRequest: NSObject {
             }
             for file in files {
                 body.append("--\(boundary)\r\n".data(using: .utf8)!)
-                body.append(file.httpEncode())
+                try body.append(file.httpEncode())
             }
             body.append("--\(boundary)--\r\n".data(using: .utf8)!)
         } else {
@@ -131,10 +131,9 @@ public class PokitdokRequest: NSObject {
                     let contentType = getHeader(key: "Content-Type")
                     if contentType == "application/json" {
                         do {
-                            body = try JSONSerialization.data(withJSONObject: params, options: [])
+                            body = try! JSONSerialization.data(withJSONObject: params, options: [])
                         } catch {
-                            // raise here
-                            print("Failed to convert params to JSON")
+                            throw DataConversionError.ToJSON("Failed to convert params to JSON")
                         }
                     } else if contentType == "application/x-www-form-urlencoded" {
                         body = buildParamString(params: params).data(using: .utf8)!
@@ -248,7 +247,7 @@ public struct FileData {
     var path: String
     var contentType: String
     
-    func httpEncode() -> Data{
+    func httpEncode() throws -> Data{
         /*
          Encodes file into data for http transmission
          :RETURNS body: Data type filled with content headers and file data
@@ -261,9 +260,17 @@ public struct FileData {
             body.append(try Data(contentsOf: url))
             body.append("\r\n".data(using: .utf8)!)
         } catch {
-            // raise here
-            print("Failed to encode File for http request")
+            throw DataConversionError.FileEncoding("Failed to encode File for http request")
         }
         return body
     }
+}
+
+enum DataConversionError: Error {
+    /*
+        Custom request error handling
+    */
+    case FromJSON(String)
+    case ToJSON(String)
+    case FileEncoding(String)
 }

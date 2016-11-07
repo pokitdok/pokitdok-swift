@@ -14,7 +14,7 @@ import XCTest
 
 class pokitdokTests: XCTestCase {
     
-    func testInitPokitdok() {
+    func testInitPokitdok() throws {
         /*
          Test init of Pokitdok class, make sure everything is unpacked correctly
          */
@@ -27,7 +27,7 @@ class pokitdokTests: XCTestCase {
         let scope = "myScope"
         let tokenCallback = "callback"
         let code = "007"
-        let client = Pokitdok(clientId: client_id, clientSecret: client_secret, basePath: base, version: version, redirectUri: redirect, scope: scope, autoRefresh: true, tokenRefreshCallback: tokenCallback, code: code, token: token)
+        let client = try Pokitdok(clientId: client_id, clientSecret: client_secret, basePath: base, version: version, redirectUri: redirect, scope: scope, autoRefresh: true, tokenRefreshCallback: tokenCallback, code: code, token: token)
         XCTAssert(client.username == client_id)
         XCTAssert(client.password == client_secret)
         XCTAssert(client.urlBase == base+"/api/"+version)
@@ -63,25 +63,25 @@ class pokitdokTests: XCTestCase {
         XCTAssert(file.contentType == "application/json")
     }
     
-    func testPokitdokRequestHeader() {
+    func testPokitdokRequestHeader() throws {
         /*
          Test setHeader/getHeader method of PokitdokRequest class
          */
-        let request = PokitdokRequest(path: "http://www.apple.com")
+        let request = try PokitdokRequest(path: "http://www.apple.com")
         request.setHeader(key: "Content-Type", value: "application/json")
         XCTAssert(request.getHeader(key: "Content-Type") == "application/json")
     }
     
-    func testPokitdokRequestPath() {
+    func testPokitdokRequestPath() throws {
         /*
          Test setPath/getPath method of PokitdokRequest class
          */
-        let request = PokitdokRequest(path: "http://www.apple.com")
+        let request = try PokitdokRequest(path: "http://www.apple.com")
         request.setPath(path: "http://www.google.com")
         XCTAssert(request.getPath() == "http://www.google.com")
     }
     
-    func testGetPokitdokRequestWithParams() {
+    func testGetPokitdokRequestWithParams() throws {
         /*
          Test a GET method PokitdokRequest class with params
          with contentType application/json
@@ -89,13 +89,13 @@ class pokitdokTests: XCTestCase {
         let path = "http://www.apple.com"
         let headers = ["Content-Type": "application/json"]
         let params = ["trading_partner_id": "MOCKPAYER"]
-        let request = PokitdokRequest(path: path, method: "GET", headers: headers, params: params)
+        let request = try PokitdokRequest(path: path, method: "GET", headers: headers, params: params)
         XCTAssert(request.getMethod()! == "GET")
         XCTAssert(request.getHeader(key: "Content-Type") == "application/json")
         XCTAssert(request.getPath() == "http://www.apple.com?trading_partner_id=MOCKPAYER")
     }
     
-    func testPostPokitdokRequestWithParams() {
+    func testPostPokitdokRequestWithParams() throws {
         /*
          Test a POST method PokitdokRequest class with params
          with contentType application/json
@@ -103,13 +103,13 @@ class pokitdokTests: XCTestCase {
         let path = "http://www.apple.com"
         let headers = ["Content-Type": "application/json"]
         let params = ["trading_partner_id": "MOCKPAYER"]
-        let request = PokitdokRequest(path: path, method: "POST", headers: headers, params: params)
+        let request = try PokitdokRequest(path: path, method: "POST", headers: headers, params: params)
         XCTAssert(request.getMethod()! == "POST")
         XCTAssert(request.getHeader(key: "Content-Type") == "application/json")
         XCTAssert(request.getBody()! == "{\"trading_partner_id\":\"MOCKPAYER\"}".data(using: .utf8))
     }
     
-    func testPostUrlEncodedPokitdokRequestWithParams() {
+    func testPostUrlEncodedPokitdokRequestWithParams() throws {
         /*
          Test a POST method PokitdokRequest class with params
          with contentType application/x-www-form-urlencoded
@@ -117,7 +117,7 @@ class pokitdokTests: XCTestCase {
         let path = "http://www.apple.com"
         let headers = ["Content-Type": "application/x-www-form-urlencoded"]
         let params = ["trading_partner_id": "MOCKPAYER"]
-        let request = PokitdokRequest(path: path, method: "POST", headers: headers, params: params)
+        let request = try PokitdokRequest(path: path, method: "POST", headers: headers, params: params)
         XCTAssert(request.getMethod()! == "POST")
         XCTAssert(request.getHeader(key: "Content-Type") == "application/x-www-form-urlencoded")
         XCTAssert(request.getBody() == "trading_partner_id=MOCKPAYER".data(using: .utf8))
