@@ -1,4 +1,15 @@
-# Pokitdok Swift Client
+# Pokitdok Platform API Client for Swift
+
+Built in Swift 3 to make development using Pokitdok APIs easier and more convenient.
+
+## Resources
+* [Read the PokitDok API docs][apidocs]
+* [View Source on GitHub][code]
+* [Report Issues on GitHub][issues]
+
+[apidocs]: https://platform.pokitdok.com/documentation/v4#/
+[code]: https://github.com/pokitdok/pokitdok-swift
+[issues]: https://github.com/pokitdok/pokitdok-swift/issues
 
 ## Install
 
