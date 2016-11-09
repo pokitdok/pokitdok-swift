@@ -58,7 +58,7 @@ let elig_args = [
     "trading_partner_id": "MOCKPAYER"
 ] as [String : Any]
         
-let elig_response = try client.eligibility(eligibilityRequest: elig_args)
+let elig_response = try client.eligibility(params: elig_args)
 ```
 ## Making Requests
 
@@ -120,7 +120,7 @@ let elig_args = [
     ],
     "trading_partner_id": "MOCKPAYER"
 ] as [String : Any]
-let elig_response = try client.eligibility(eligibilityRequest: elig_args)
+let elig_response = try client.eligibility(params: elig_args)
 ```
 ## Authentication
 Access to PokitDok APIs is controlled via OAuth2. Most APIs are accessible with an access token acquired via a client credentials grant type, you simply supply your app credentials and you're ready to go:
