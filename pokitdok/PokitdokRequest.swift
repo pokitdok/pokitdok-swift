@@ -11,24 +11,6 @@
 
 import Foundation
 
-public struct PokitdokResponse {
-    /*
-     Struct to hold response information
-     :VAR success: Bool? type true or false success of the request
-     :VAR response: URLResponse? type response object from server
-     :VAR data: Data? type data of the response
-     :VAR error: Error? type errors from server
-     :VAR json: [String:Any]? type json data translated from response
-     :VAR message: String? type conveying messages about response ex(TOKEN_EXPIRED)
-     */
-    var success: Bool? = false
-    var response: URLResponse? = nil
-    var data: Data? = nil
-    var error: Error? = nil
-    var json: Dictionary<String, Any>? = nil
-    var message: String? = nil
-}
-
 public class PokitdokRequest: NSObject {
     /*
      Class to facilitate a single HTTP request and the resulting response
@@ -83,7 +65,7 @@ public class PokitdokRequest: NSObject {
         
         if let data = responseObject.data {
             do {
-                responseObject.json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as! Dictionary<String, Any>
+                responseObject.json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? Dictionary<String, Any>
             } catch {
                 throw DataConversionError.FromJSON("Failed to parse JSON from data")
             }
@@ -131,7 +113,7 @@ public class PokitdokRequest: NSObject {
                     let contentType = getHeader(key: "Content-Type")
                     if contentType == "application/json" {
                         do {
-                            body = try! JSONSerialization.data(withJSONObject: params, options: [])
+                            body = try JSONSerialization.data(withJSONObject: params, options: [])
                         } catch {
                             throw DataConversionError.ToJSON("Failed to convert params to JSON")
                         }
@@ -236,41 +218,4 @@ public class PokitdokRequest: NSObject {
          */
         requestObject.httpBody = data
     }
-}
-
-public struct FileData {
-    /*
-     struct to hold file information for transmission
-     :VAR path: The file structure path to the file
-     :VAR contentType: The content type to be transmitted with the file
-     */
-    var path: String
-    var contentType: String
-    
-    public func httpEncode() throws -> Data{
-        /*
-         Encodes file into data for http transmission
-         :RETURNS body: Data type filled with content headers and file data
-         */
-        var body = Data()
-        do {
-            let url = URL(fileURLWithPath: self.path)
-            body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(url.lastPathComponent)\"\r\n".data(using: .utf8)!)
-            body.append("Content-Type: \(self.contentType)\r\n\r\n".data(using: .utf8)!)
-            body.append(try Data(contentsOf: url))
-            body.append("\r\n".data(using: .utf8)!)
-        } catch {
-            throw DataConversionError.FileEncoding("Failed to encode File for http request")
-        }
-        return body
-    }
-}
-
-public enum DataConversionError: Error {
-    /*
-        Custom request error handling
-    */
-    case FromJSON(String)
-    case ToJSON(String)
-    case FileEncoding(String)
 }

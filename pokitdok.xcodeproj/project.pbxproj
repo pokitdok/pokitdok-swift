@@ -12,6 +12,10 @@
 		1D18584E1DCD1445005D573B /* pokitdok.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1858401DCD1444005D573B /* pokitdok.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D1858581DCD1488005D573B /* Pokitdok.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1858571DCD1488005D573B /* Pokitdok.swift */; };
 		1D18585A1DCD14A2005D573B /* PokitdokRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1858591DCD14A2005D573B /* PokitdokRequest.swift */; };
+		1D1859031DD38CA4005D573B /* testingResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1859021DD38CA4005D573B /* testingResources.swift */; };
+		1D1859051DD3B493005D573B /* PokitdokResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1859041DD3B493005D573B /* PokitdokResponse.swift */; };
+		1D1859071DD3B4EE005D573B /* FileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1859061DD3B4EE005D573B /* FileData.swift */; };
+		1D1859091DD3B551005D573B /* PokitdokErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1859081DD3B551005D573B /* PokitdokErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,10 @@
 		1D18584D1DCD1445005D573B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D1858571DCD1488005D573B /* Pokitdok.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokitdok.swift; sourceTree = "<group>"; };
 		1D1858591DCD14A2005D573B /* PokitdokRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokitdokRequest.swift; sourceTree = "<group>"; };
+		1D1859021DD38CA4005D573B /* testingResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testingResources.swift; sourceTree = "<group>"; };
+		1D1859041DD3B493005D573B /* PokitdokResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokitdokResponse.swift; sourceTree = "<group>"; };
+		1D1859061DD3B4EE005D573B /* FileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileData.swift; sourceTree = "<group>"; };
+		1D1859081DD3B551005D573B /* PokitdokErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokitdokErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,9 @@
 				1D1858411DCD1444005D573B /* Info.plist */,
 				1D1858571DCD1488005D573B /* Pokitdok.swift */,
 				1D1858591DCD14A2005D573B /* PokitdokRequest.swift */,
+				1D1859041DD3B493005D573B /* PokitdokResponse.swift */,
+				1D1859061DD3B4EE005D573B /* FileData.swift */,
+				1D1859081DD3B551005D573B /* PokitdokErrors.swift */,
 			);
 			path = pokitdok;
 			sourceTree = "<group>";
@@ -88,6 +99,7 @@
 			children = (
 				1D18584B1DCD1445005D573B /* pokitdokTests.swift */,
 				1D18584D1DCD1445005D573B /* Info.plist */,
+				1D1859021DD38CA4005D573B /* testingResources.swift */,
 			);
 			path = pokitdokTests;
 			sourceTree = "<group>";
@@ -204,7 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D18585A1DCD14A2005D573B /* PokitdokRequest.swift in Sources */,
+				1D1859051DD3B493005D573B /* PokitdokResponse.swift in Sources */,
+				1D1859091DD3B551005D573B /* PokitdokErrors.swift in Sources */,
 				1D1858581DCD1488005D573B /* Pokitdok.swift in Sources */,
+				1D1859071DD3B4EE005D573B /* FileData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1859031DD38CA4005D573B /* testingResources.swift in Sources */,
 				1D18584C1DCD1445005D573B /* pokitdokTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

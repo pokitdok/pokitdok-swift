@@ -11,20 +11,13 @@
 
 import Foundation
 
-public enum FailedToFetchTokenError : Error {
-    /*
-        Custom error handling to track client requests
-    */
-    case CouldNotAuthenticate(String)
-}
-
 public class Pokitdok: NSObject {
     /*
      Pokitdok Swift client convenient to send requests to Pokitdok Platform APIs
      */
     
-    let username: String
-    let password: String
+    let username: String?
+    let password: String?
     let urlBase: String
     let tokenUrl: String
     let authUrl: String
@@ -35,13 +28,13 @@ public class Pokitdok: NSObject {
     let authCode: String?
     var accessToken: String? = nil
     
-    public init(clientId: String, clientSecret: String, basePath: String = "https://platform.pokitdok.com", version: String = "v4",
+    public init(clientId: String? = nil, clientSecret: String? = nil, basePath: String = "https://platform.pokitdok.com", version: String = "v4",
          redirectUri: String? = nil, scope: String? = nil, autoRefresh: Bool = false, tokenRefreshCallback: String? = nil,
          code: String? = nil, token: String? = nil) throws {
         /*
          Initialize necessary variables
-         :PARAM clientId: String type client ID for OAuth client credentials flow
-         :PARAM clientSecret: String type client secret for OAuth client credentials flow
+         :PARAM clientId: String? type client ID for OAuth client credentials flow
+         :PARAM clientSecret: String? type client secret for OAuth client credentials flow
          :PARAM basePath: String type url path that other urls will be based off
          :PARAM version: String type version of api, defaulted to "v4"
          :PARAM redirectUri: String? type redirect path used to authorize via Oauth authorization grant flow
@@ -65,6 +58,7 @@ public class Pokitdok: NSObject {
         accessToken = token
         
         super.init()
+
         if accessToken == nil{
             try fetchAccessToken()
         }
@@ -75,7 +69,11 @@ public class Pokitdok: NSObject {
          Retrieve OAuth2 access token and set it on self.accessToken
          */
         
-        let utf8str = "\(username):\(password)".data(using: String.Encoding.utf8)
+        if username == nil || password == nil {
+            throw FailedToFetchTokenError.CouldNotAuthenticate("Client ID and Client Secret are required to fetch an access token")
+        }
+
+        let utf8str = "\(username!):\(password!)".data(using: String.Encoding.utf8)
         let encodedIdSecret = utf8str?.base64EncodedString(options: [])
         let headers = ["Authorization" : "Basic \(encodedIdSecret ?? "")", "Content-Type" : "application/x-www-form-urlencoded"] as Dictionary<String, String>
         let params = ["grant_type" : "client_credentials"] as Dictionary<String, Any>
