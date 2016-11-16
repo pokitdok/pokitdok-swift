@@ -41,6 +41,22 @@ class pokitdokTests: XCTestCase {
         XCTAssert(client.accessToken == token)
     }
     
+    func testMissingIdSecretThrowsFailedToFetchTokenError() throws {
+        /*
+         Test init of Pokitdok class without necessary variables
+         */
+
+        let base = "http://localhost:5002"
+        let version = "v4"
+        let redirect = "http://nowhere"
+        let scope = "myScope"
+        let tokenCallback = "callback"
+        let code = "007"
+        XCTAssertThrows(error: FailedToFetchTokenError.CouldNotAuthenticate(""), block: {
+            _ = try Pokitdok(basePath: base, version: version, redirectUri: redirect, scope: scope, autoRefresh: true, tokenRefreshCallback: tokenCallback, code: code)
+        })
+    }
+
     func testPokitdokResponse() {
         /*
          Test default values of PokitdokResponse struct
@@ -122,5 +138,4 @@ class pokitdokTests: XCTestCase {
         XCTAssert(request.getHeader(key: "Content-Type") == "application/x-www-form-urlencoded")
         XCTAssert(request.getBody() == "trading_partner_id=MOCKPAYER".data(using: .utf8))
     }
-    
 }
