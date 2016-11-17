@@ -272,7 +272,7 @@ public class Pokitdok: NSObject {
          :RETURNS json: [String:Any] type key:value response from server after request
          */
         
-        let path = "/enrollment"
+        let path = "/enrollment/"
         let method = "POST"
         
         return try request(path: path, method: method, params: params)
@@ -302,8 +302,10 @@ public class Pokitdok: NSObject {
          :PARAM params: [String:Any] type parameters to be sent along with request
          :RETURNS json: [String:Any] type key:value response from server after request
          */
-        
-        let path = "/enrollment/snapshot/\(snapshotId ?? "")"
+        var path = "/enrollment/snapshot"
+        if let snapshotId = snapshotId {
+            path += "/\(snapshotId)"
+        }
         let method = "GET"
         
         return try request(path: path, method: method, params: params)
@@ -412,7 +414,7 @@ public class Pokitdok: NSObject {
          :RETURNS json: [String:Any] type key:value response from server after request
          */
         
-        let path = "/plans"
+        let path = "/plans/"
         let method = "GET"
         
         return try request(path: path, method: method, params: params)
@@ -600,8 +602,10 @@ public class Pokitdok: NSObject {
          :PARAM historicalVersion: String? type version of history
          :RETURNS json: [String:Any] type key:value response from server after request
          */
-        
-        let path = "identity/\(identityUuid)/history/\(historicalVersion ?? "")"
+        var path = "/identity/\(identityUuid)/history"
+        if let historicalVersion = historicalVersion {
+            path += "/\(historicalVersion)"
+        }
         let method = "GET"
         
         return try request(path: path, method: method)
@@ -653,8 +657,10 @@ public class Pokitdok: NSObject {
          :PARAM params: [String:Any] type parameters to be sent along with request
          :RETURNS json: [String:Any] type key:value response from server after request
          */
-        
-        let path = "/pharmacy/network/\(npi ?? "")"
+        var path = "/pharmacy/network"
+        if let npi = npi {
+            path += "/\(npi)"
+        }
         let method = "GET"
         
         return try request(path: path, method: method, params: params)
