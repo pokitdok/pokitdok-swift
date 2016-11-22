@@ -136,7 +136,7 @@ let client = try Pokitdok(clientId: client_id, clientSecret: client_secret)
 ## Updating the Client
 If you find a bug or problem with the client, please submit an issue or feel free to create a pull request and we will help to process that request as soon as possible. 
 After changes have been merged in, please follow the following steps to redeploy the client out to our cocoapods release.
-1. Tag your changes with the appropriate sequential tag number.
-2. Update the `pokitdok.podspec` file with the new version_number
-3. Merge and Push your new tags into the master branch.
-4. Run `pod trunk push pokitdok.podspec` from your terminal, while navigated to the project, to release the new version
+- Tag your changes with the appropriate sequential tag number.
+-  Update the `pokitdok.podspec` file with the new version_number
+-  Merge and Push your new tags into the master branch.
+-  Run `pod trunk push pokitdok.podspec` from your terminal, while navigated to the project, to release the new version
