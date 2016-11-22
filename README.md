@@ -11,7 +11,35 @@ Built in Swift 3 to make development using Pokitdok APIs easier and more conveni
 [code]: https://github.com/pokitdok/pokitdok-swift
 [issues]: https://github.com/pokitdok/pokitdok-swift/issues
 
-## Install
+## Installation
+
+### CocoaPods Install
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+- To integrate Pokitdok into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.1'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'pokitdok', '~> 0.1.0'
+end
+```
+- Finally, run the following command:
+
+```bash
+$ pod install
+```
+
+- Open the .xcworkspace file, and continue to develop using our awesome client! Note: after pod install, you must use the the .xcworkspace file instead of the .xcodeproj file.
+
+### Manual Install
 
 - In a terminal, cd to your project directory, and initialize your project as a git repository (if you have not already):
 
@@ -132,3 +160,13 @@ let client_secret = "<your-client-secret>"
 let client = try Pokitdok(clientId: client_id, clientSecret: client_secret)
 ```
 *Sidenote*: It is highly recommended that you do not release an iOS app with your Client ID and Client Secret strings baked into the app, as they may be vulnerable to exposure there. A suitable alternative would be to utilize an external identity service that authenticates your users and requests an access token that can then be returned to your app to utilize.
+
+## Updating the Client
+If you find a bug or problem with the client, please submit an issue or feel free to create a pull request and we will help to process that request as soon as possible. 
+
+### For Internal Use
+After changes have been merged in, please follow the following steps to redeploy the client out to our cocoapods release.
+- Tag your changes with the appropriate sequential tag number.
+-  Update the `pokitdok.podspec` file and the README.md instructions with the new version_number
+-  Merge and Push your new tags into the master branch.
+-  Run `pod trunk push pokitdok.podspec` from your terminal, while navigated to the project, to release the new version
