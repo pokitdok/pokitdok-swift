@@ -132,3 +132,11 @@ let client_secret = "<your-client-secret>"
 let client = try Pokitdok(clientId: client_id, clientSecret: client_secret)
 ```
 *Sidenote*: It is highly recommended that you do not release an iOS app with your Client ID and Client Secret strings baked into the app, as they may be vulnerable to exposure there. A suitable alternative would be to utilize an external identity service that authenticates your users and requests an access token that can then be returned to your app to utilize.
+
+## Updating the Client
+If you find a bug or problem with the client, please submit an issue or feel free to create a pull request and we will help to process that request as soon as possible. 
+After changes have been merged in, please follow the following steps to redeploy the client out to our cocoapods release.
+1. Tag your changes with the appropriate sequential tag number.
+2. Update the `pokitdok.podspec` file with the new version_number
+3. Merge and Push your new tags into the master branch.
+4. Run `pod trunk push pokitdok.podspec` from your terminal, while navigated to the project, to release the new version
