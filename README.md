@@ -163,6 +163,8 @@ let client = try Pokitdok(clientId: client_id, clientSecret: client_secret)
 
 ## Updating the Client
 If you find a bug or problem with the client, please submit an issue or feel free to create a pull request and we will help to process that request as soon as possible. 
+
+### For Internal Use
 After changes have been merged in, please follow the following steps to redeploy the client out to our cocoapods release.
 - Tag your changes with the appropriate sequential tag number.
 -  Update the `pokitdok.podspec` file and the README.md instructions with the new version_number
