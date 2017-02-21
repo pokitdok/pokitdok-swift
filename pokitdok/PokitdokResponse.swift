@@ -25,4 +25,5 @@ public struct PokitdokResponse {
     var error: Error? = nil
     var json: Dictionary<String, Any>? = nil
     var message: String? = nil
+    var status: Int? = nil
 }

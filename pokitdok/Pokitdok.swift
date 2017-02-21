@@ -27,6 +27,8 @@ public class Pokitdok: NSObject {
     let tokenCallback: String?
     let authCode: String?
     var accessToken: String? = nil
+    var userAgent: String
+    var status_code: Int? = nil
     
     public init(clientId: String? = nil, clientSecret: String? = nil, basePath: String = "https://platform.pokitdok.com", version: String = "v4",
          redirectUri: String? = nil, scope: String? = nil, autoRefresh: Bool = false, tokenRefreshCallback: String? = nil,
@@ -57,6 +59,19 @@ public class Pokitdok: NSObject {
         authCode = code
         accessToken = token
         
+        // Define User-Agent for request headers so calls can be traced back to this client
+        if #available(iOS 7, *){
+            // Get iOS operating system version
+            userAgent = "pokitdok-swift#\(pokitdokVersionNumber)#iOS#\(UIDevice.current.systemVersion)"
+        } else if #available(OSX 10, *) {
+            // Get OSX operating system version
+            let ver = ProcessInfo.processInfo.operatingSystemVersion
+            userAgent = "pokitdok-swift#\(pokitdokVersionNumber)#OSX#\(ver.majorVersion).\(ver.minorVersion)"
+        } else {
+            // base fallback user agent
+            userAgent = "pokitdok-swift#\(pokitdokVersionNumber)"
+        }
+
         super.init()
 
         if accessToken == nil{
@@ -74,11 +89,12 @@ public class Pokitdok: NSObject {
         }
         let utf8str = "\(username!):\(password!)".data(using: String.Encoding.utf8)
         let encodedIdSecret = utf8str?.base64EncodedString(options: [])
-        let headers = ["Authorization" : "Basic \(encodedIdSecret ?? "")", "Content-Type" : "application/x-www-form-urlencoded"] as Dictionary<String, String>
+        let headers = ["Authorization" : "Basic \(encodedIdSecret ?? "")", "Content-Type" : "application/x-www-form-urlencoded", "User-Agent" : userAgent] as Dictionary<String, String>
         let params = ["grant_type" : "client_credentials"] as Dictionary<String, Any>
 
         let tokenRequest = try PokitdokRequest(path: tokenUrl, method: "POST", headers: headers, params: params)
         let tokenResponse = try tokenRequest.call()
+        self.status_code = tokenResponse.status
 
         if tokenResponse.success == true {
             self.accessToken = tokenResponse.json?["access_token"] as! String?
@@ -98,16 +114,18 @@ public class Pokitdok: NSObject {
          */
         
         let requestUrl = urlBase + path
-        var headers = ["Content-Type": "application/json"]
+        var headers = ["Content-Type": "application/json", "User-Agent" : userAgent]
         headers["Authorization"] = "Bearer \(accessToken ?? "")"
         
         let requestObject = try PokitdokRequest(path: requestUrl, method: method, headers: headers, params: params, files: files)
         var responseObject = try requestObject.call()
+        self.status_code = responseObject.status
         
         if autoRefreshToken, responseObject.success == false, responseObject.message == "TOKEN_EXPIRED" {
             try fetchAccessToken()
             requestObject.setHeader(key: "Authorization", value: "Bearer \(accessToken ?? "")")
             responseObject = try requestObject.call()
+            self.status_code = responseObject.status
         }
         
         return responseObject.json ?? [:]
