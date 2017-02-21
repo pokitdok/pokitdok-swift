@@ -39,6 +39,7 @@ class pokitdokTests: XCTestCase {
         XCTAssert(client.tokenCallback == tokenCallback)
         XCTAssert(client.authCode == code)
         XCTAssert(client.accessToken == token)
+        XCTAssert(client.status_code == nil)
     }
     
     func testMissingIdSecretThrowsFailedToFetchTokenError() throws {
