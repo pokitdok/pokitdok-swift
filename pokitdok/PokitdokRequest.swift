@@ -51,8 +51,9 @@ public class PokitdokRequest: NSObject {
             self.responseObject.response = response
             self.responseObject.data = data
             self.responseObject.error = error
-            
+
             if let response = response as? HTTPURLResponse {
+                self.responseObject.status = response.statusCode
                 if 200...299 ~= response.statusCode {
                     self.responseObject.success = true
                 } else if 401 ~= response.statusCode {
