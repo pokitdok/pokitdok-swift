@@ -28,7 +28,7 @@ platform :ios, '10.1'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'pokitdok', '~> 0.1.0'
+    pod 'pokitdok', '~> 0.1.1'
 end
 ```
 - Finally, run the following command:
